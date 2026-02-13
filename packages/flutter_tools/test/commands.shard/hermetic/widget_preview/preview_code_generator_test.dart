@@ -418,13 +418,26 @@ List<_i1.WidgetPreview> previews() => [];
 
         // Populate the DTD connection info.
         final Uri dtdUri = Uri.parse('ws://localhost:1234');
+<<<<<<< HEAD
         codeGenerator.populateDtdConnectionInfo(dtdUri);
+=======
+        codeGenerator.populateDtdConnectionInfo(
+          dtdUri: dtdUri,
+          widgetPreviewServiceName: 'widget-preview-service',
+          widgetPreviewScaffoldStreamName: 'widget-preview-stream',
+        );
+>>>>>>> 44a626f4f0027bc38a46dc68aed5964b05a83c18
 
         final expectedDtdConnectionInfo =
             '''
 // ignore_for_file: implementation_imports
 
 const String kWidgetPreviewDtdUri = '$dtdUri';
+<<<<<<< HEAD
+=======
+const String kWidgetPreviewService = 'widget-preview-service';
+const String kWidgetPreviewScaffoldStream = 'widget-preview-stream';
+>>>>>>> 44a626f4f0027bc38a46dc68aed5964b05a83c18
 ''';
         expect(generatedDtdConnectionInfoFile.readAsStringSync(), expectedDtdConnectionInfo);
       },
